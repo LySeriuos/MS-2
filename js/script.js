@@ -8,7 +8,12 @@ const bottomRight = document.querySelector('.top-right-sector');
 
 const sequences = [topLeft, bottomLeft, bottomRight, topRight];
 
-//flashing random colour from array
+const getRandomSector = () => {
+   const sectors = [topLeft, bottomLeft, bottomRight, topRight]
+   return sectors[parseInt(Math.random()* sectors.length)];
+}
+
+//flashing random colour from array sequences
 const flash = (sector) => {
 return new Promise((resolve, reject) =>{
    sector.className += 'active';
