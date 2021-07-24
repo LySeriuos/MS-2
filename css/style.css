@@ -2,13 +2,25 @@
 /* Creating the memory game "Simon" style */ 
 /*Styling*/
 
-/*Making a cricle of 4 pieces (sectors) in different colours*/
+/* styling body */ 
+
+body {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+/*Making a cricle of 4 pieces (sectors) in different colours and one circle in the middle*/
 .sector {
   width: 200px;
   height: 200px;  
   display: inline-block;
- 
-}
+  cursor: pointer;
+ }
   
 .top-left-sector {
     border-top-left-radius: 50%;
@@ -43,14 +55,14 @@
     left: 100px;  
     }
 
-/* styling body */ 
+    /* Game action styling */
 
-body {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    .sector:hover {
+        box-shadow: inset 0px 0px 0px 4px rgb(133, 49, 56);
+        box-sizing: border-box;; 
+    }
 
-}
+    .active {
+        background-color: rgba(255, 255, 255, 0.8);
+        
+    }
