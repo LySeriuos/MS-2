@@ -13,19 +13,16 @@ const getRandomSector = () => {
    const sectors = [topLeft, bottomLeft, bottomRight, topRight]
    return sectors[parseInt(Math.random()* sectors.length)];
 }
-const sequence =  [
-    getRandomSector(),
-    getRandomSector(),
-    getRandomSector(),
-    getRandomSector()
-];
+const sequence =  [getRandomSector()];
+let sequenceToGuess = [...sequences]
+
 //flashing random colour from array sequences
 const flash = (sector) => {
 return new Promise((resolve, reject) =>{
    sector.className += 'active';
    setTimeout(() => {
 sector.className = sector.className.replace('active', '');
-//setting break between double colour flashing
+//setting break time between double colour flashing
 setTimeout(() => {
     resolve();
 }, 250);
@@ -33,9 +30,27 @@ setTimeout(() => {
 });
 };
 
+let canClick = false;
+
+const sectorClicked = sectorClicked => {
+    if(!canClick) return;
+    console.log(sectorClicked);
+    const expectedSector = sequenceToGuess.shift();
+    if (expectedSector === sectorClicked) {
+        if (sequenceToGuess.length === 0) {
+    //start new round
+        }
+       
+    } else {
+        //end game
+        alert('Sorry, but you did mistake');
+    }
+};
+
 let main = async () =>{
     for (let sector of sequences) {
         await flash(sector);   
     }
+    canClick = true;
 };
 main();
