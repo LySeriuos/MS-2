@@ -7,6 +7,7 @@
   width: 200px;
   height: 200px;  
   display: inline-block;
+ 
 }
   
 .top-left-sector {
@@ -20,6 +21,7 @@
     background-color: blue;
     border-bottom-left-radius: 100px;
 }
+
 .bottom-left-sector {
     border-bottom-left-radius: 50%;
         background-color: green;
@@ -31,6 +33,15 @@
     border-top-left-radius: 100px;
     
 }
+.inner-circle {
+    position: relative;
+    background: black;
+	border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    bottom: 300px;
+    left: 100px;  
+    }
 
 /* styling body */ 
 
